@@ -571,6 +571,16 @@ awful.rules.rules = {
             },
         }, properties = { tag = "main" }
     },
+    -- windows that will be on tag 2
+    {
+        rule_any = {
+            class = {
+                "WebApp-todoist0228",
+                "Bitwarden",
+                "WebApp-github9991"
+            },
+        }, properties = { tag = "todo" }
+    },
 
     -- width and height of a centered floating xfce4-appfinder
     {
