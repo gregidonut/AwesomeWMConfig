@@ -561,6 +561,16 @@ awful.rules.rules = {
                      placement = awful.placement.no_overlap + awful.placement.no_offscreen
       }
     },
+    -- windows that will be on tag 1
+    {
+        rule_any = {
+            class = {
+                "WebApp-monkeytype8630",
+                "WebApp-messenger3845",
+                "discord"
+            },
+        }, properties = { tag = "main" }
+    },
 
     -- width and height of a centered floating xfce4-appfinder
     {
