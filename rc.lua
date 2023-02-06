@@ -555,6 +555,21 @@ awful.rules.rules = {
       }
     },
 
+    -- width and height of a centered floating xfce4-appfinder
+    {
+        rule_any = {
+            class = {
+                "Xfce4-appfinder",
+            },
+        }, properties = {
+        floating = true,
+        width = "679",
+        height = "711",
+        ontop = true,
+        placement = awful.placement.centered
+    }
+    },
+
     -- Floating clients.
     { rule_any = {
         instance = {
