@@ -711,3 +711,7 @@ end)
 -- increment master clients twice to make todo tag into three columns
 local tag = awful.tag.find_by_name(awful.screen.focused(), "todo") -- Find a tag by name
 awful.tag.incnmaster(2, tag, true) -- Increment the number of master clients on the tag
+
+-- launch startup apps
+awful.spawn.easy_async_with_shell("/home/lakw/bin/startupapps")
+
