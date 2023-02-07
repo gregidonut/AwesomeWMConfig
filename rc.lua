@@ -124,7 +124,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock("%a %b %d, %Y %I:%M %p")
 local cw = calendar_widget({
     theme = 'dark',
     placement = 'top_right',
