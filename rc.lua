@@ -301,7 +301,7 @@ globalkeys = gears.table.join(
                 { description = "view previous", group = "tag" }),
         awful.key({ modkey, }, "l", awful.tag.viewnext,
                 { description = "view next", group = "tag" }),
-        awful.key({ modkey, }, "Escape", awful.tag.history.restore,
+        awful.key({ "Mod1", }, "Escape", awful.tag.history.restore,
                 { description = "go back", group = "tag" }),
 
         awful.key({ modkey, }, "j",
@@ -756,5 +756,5 @@ end)
 --awful.tag.incnmaster(2, tag, true) -- Increment the number of master clients on the tag
 
 -- launch startup apps
---awful.spawn.easy_async_with_shell("/home/lakw/bin/startupapps")
+awful.spawn.easy_async_with_shell("/home/lakw/bin/startupapps")
 
