@@ -258,6 +258,7 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             -- mylauncher,
             s.mytaglist,
+            s.mylayoutbox,
             s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
@@ -265,19 +266,16 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             -- mykeyboardlayout,
             wibox.widget.systray(),
-            mytextclock,
-
             --battery arc widget
             batteryarc_widget({
                 show_current_level = true,
                 arc_thickness = 1,
             }),
-            -- pactl volume widget from awesome-wm-widgets
-            volume_widget {
-                widget_type = 'arc'
-            },
 
-            s.mylayoutbox,
+            -- pactl volume widget from awesome-wm-widgets
+            volume_widget(),
+
+            mytextclock,
         },
     }
 end)
