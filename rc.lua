@@ -272,6 +272,8 @@ awful.screen.connect_for_each_screen(function(s)
                 arc_thickness = 1,
             }),
 
+            wibox.widget.textbox("    "), --spacer
+
             -- pactl volume widget from awesome-wm-widgets
             volume_widget(),
 
