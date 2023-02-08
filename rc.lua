@@ -598,6 +598,21 @@ awful.rules.rules = {
     }
     },
 
+    -- width and height for a floating windscribe
+    {
+        rule_any = {
+            class = {
+                "Windscribe2"
+            },
+        }, properties = {
+        floating = true,
+        width = "372",
+        height = "372",
+        x = 117,
+        y = 79,
+    }
+    },
+
     -- Floating clients.
     { rule_any = {
         instance = {
