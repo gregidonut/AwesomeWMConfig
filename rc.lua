@@ -76,8 +76,8 @@ modkey = "Mod4"
 awful.layout.layouts = {
     awful.layout.suit.floating,
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
+    --awful.layout.suit.tile.left,
+    --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
@@ -212,7 +212,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     local names = { "main", "todo", "work", "4", "5", "6", "7", "8", "9" }
     local l = awful.layout.suit  -- Just to save some typing: use an alias.
-    local layouts = { l.spiral.dwindle, l.tile.bottom, l.tile, l.floating, l.floating,
+    local layouts = { l.spiral.dwindle, l.tile, l.tile, l.floating, l.floating,
                       l.floating, l.floating, l.floating, l.floating }
     awful.tag(names, s, layouts)
 
@@ -709,8 +709,8 @@ end)
 -- }}}
 
 -- increment master clients twice to make todo tag into three columns
-local tag = awful.tag.find_by_name(awful.screen.focused(), "todo") -- Find a tag by name
-awful.tag.incnmaster(2, tag, true) -- Increment the number of master clients on the tag
+--local tag = awful.tag.find_by_name(awful.screen.focused(), "todo") -- Find a tag by name
+--awful.tag.incnmaster(2, tag, true) -- Increment the number of master clients on the tag
 
 -- launch startup apps
 awful.spawn.easy_async_with_shell("/home/lakw/bin/startupapps")
