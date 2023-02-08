@@ -392,17 +392,45 @@ globalkeys = gears.table.join(
         end,
                 { description = "select previous", group = "layout" }),
 
-        --awful.key({ modkey, "Control" }, "n",
-        --        function()
-        --            local c = awful.client.restore()
-        --            -- Focus restored client
-        --            if c then
-        --                c:emit_signal(
-        --                        "request::activate", "key.unminimize", { raise = true }
-        --                )
-        --            end
-        --        end,
-        --        { description = "restore minimized", group = "client" }),
+--awful.key({ modkey, "Control" }, "n",
+--        function()
+--            local c = awful.client.restore()
+--            -- Focus restored client
+--            if c then
+--                c:emit_signal(
+--                        "request::activate", "key.unminimize", { raise = true }
+--                )
+--            end
+--        end,
+--        { description = "restore minimized", group = "client" }),
+
+-- Win+Alt+Left/Right: move client to prev/next tag and switch to it
+        awful.key({ modkey, "Mod1" }, "h",
+                function()
+                    -- get current tag
+                    local t = client.focus and client.focus.first_tag or nil
+                    if t == nil then
+                        return
+                    end
+                    -- get previous tag (modulo 9 excluding 0 to wrap from 1 to 9)
+                    local tag = client.focus.screen.tags[(t.index - 2) % 9 + 1]
+                    awful.client.movetotag(tag)
+                    awful.tag.viewprev()
+                end,
+                { description = "move client to previous tag and switch to it", group = "layout" }),
+        awful.key({ modkey, "Mod1" }, "l",
+                function()
+                    -- get current tag
+                    local t = client.focus and client.focus.first_tag or nil
+                    if t == nil then
+                        return
+                    end
+                    -- get next tag (modulo 9 excluding 0 to wrap from 9 to 1)
+                    local tag = client.focus.screen.tags[(t.index % 9) + 1]
+                    awful.client.movetotag(tag)
+                    awful.tag.viewnext()
+                end,
+                { description = "move client to next tag and switch to it", group = "layout" }),
 
 -- Prompt
         awful.key({ modkey }, "r", function()
@@ -452,13 +480,13 @@ clientkeys = gears.table.join(
             c.ontop = not c.ontop
         end,
                 { description = "toggle keep on top", group = "client" }),
-        --awful.key({ modkey, }, "n",
-        --        function(c)
-        --            -- The client currently has the input focus, so it cannot be
-        --            -- minimized, since minimized clients can't have the focus.
-        --            c.minimized = true
-        --        end,
-        --        { description = "minimize", group = "client" }),
+--awful.key({ modkey, }, "n",
+--        function(c)
+--            -- The client currently has the input focus, so it cannot be
+--            -- minimized, since minimized clients can't have the focus.
+--            c.minimized = true
+--        end,
+--        { description = "minimize", group = "client" }),
         awful.key({ modkey, }, "m",
                 function(c)
                     c.maximized = not c.maximized
