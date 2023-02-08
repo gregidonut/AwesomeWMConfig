@@ -728,5 +728,5 @@ end)
 --awful.tag.incnmaster(2, tag, true) -- Increment the number of master clients on the tag
 
 -- launch startup apps
-awful.spawn.easy_async_with_shell("/home/lakw/bin/startupapps")
+--awful.spawn.easy_async_with_shell("/home/lakw/bin/startupapps")
 
