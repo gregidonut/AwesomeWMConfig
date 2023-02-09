@@ -645,6 +645,21 @@ awful.rules.rules = {
     }
     },
 
+    -- width and height for a floating searcher browser in the center
+    {
+        rule_any = {
+            class = {
+               "Brave-browser"
+            },
+        }, properties = {
+        floating = true,
+        placement = awful.placement.centered,
+        width = "1253",
+        height = "871",
+        maximized = false,
+    }
+    },
+
     -- Floating clients.
     { rule_any = {
         instance = {
