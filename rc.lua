@@ -456,6 +456,10 @@ globalkeys = gears.table.join(
 )
 
 clientkeys = gears.table.join(
+        awful.key({ modkey }, "d", function(c)
+            c.floating = not c.floating
+        end,
+                { description = "toggle floating", group = "client" }),
         awful.key({ modkey, }, "f",
                 function(c)
                     c.fullscreen = not c.fullscreen
