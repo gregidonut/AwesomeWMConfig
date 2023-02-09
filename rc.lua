@@ -295,6 +295,13 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+        awful.key({ modkey, }, "e", function()
+            for s in screen do
+                s.mywibox.visible = not s.mywibox.visible
+            end
+        end,
+                {description = "toggle hide wibar", group = "awesome"}
+        ),
         awful.key({ modkey, }, "s", hotkeys_popup.show_help,
                 { description = "show help", group = "awesome" }),
         awful.key({ modkey, }, "h", awful.tag.viewprev,
@@ -649,7 +656,7 @@ awful.rules.rules = {
     {
         rule_any = {
             class = {
-               "Brave-browser"
+                "Brave-browser"
             },
         }, properties = {
         floating = true,
