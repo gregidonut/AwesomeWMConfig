@@ -74,7 +74,6 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
     --awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
@@ -90,6 +89,7 @@ awful.layout.layouts = {
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
+    awful.layout.suit.floating,
 }
 -- }}}
 
@@ -212,8 +212,8 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.
     local names = { "main", "todo", "work", "4", "5", "6", "7", "8", "9" }
     local l = awful.layout.suit  -- Just to save some typing: use an alias.
-    local layouts = { l.spiral.dwindle, l.tile, l.tile, l.floating, l.floating,
-                      l.floating, l.floating, l.floating, l.floating }
+    local layouts = { l.spiral.dwindle, l.tile, l.tile, l.tile, l.floating,
+                      l.tile, l.tile, l.tile, l.tile, }
     awful.tag(names, s, layouts)
 
     -- Create a promptbox for each screen
@@ -300,7 +300,7 @@ globalkeys = gears.table.join(
                 s.mywibox.visible = not s.mywibox.visible
             end
         end,
-                {description = "toggle hide wibar", group = "awesome"}
+                { description = "toggle hide wibar", group = "awesome" }
         ),
         awful.key({ modkey, }, "s", hotkeys_popup.show_help,
                 { description = "show help", group = "awesome" }),
