@@ -687,6 +687,7 @@ awful.rules.rules = {
             "veromix",
             "SVPManager",
             "mpv",
+            "Clock",
             "xtightvncviewer" },
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
