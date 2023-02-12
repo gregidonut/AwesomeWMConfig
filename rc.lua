@@ -383,14 +383,14 @@ globalkeys = gears.table.join(
             awful.tag.incnmaster(-1, nil, true)
         end,
                 { description = "decrease the number of master clients", group = "layout" }),
-        awful.key({ modkey, "Control" }, "h", function()
-            awful.tag.incncol(1, nil, true)
-        end,
-                { description = "increase the number of columns", group = "layout" }),
-        awful.key({ modkey, "Control" }, "l", function()
-            awful.tag.incncol(-1, nil, true)
-        end,
-                { description = "decrease the number of columns", group = "layout" }),
+        --awful.key({ modkey, "Control" }, "h", function()
+        --    awful.tag.incncol(1, nil, true)
+        --end,
+        --        { description = "increase the number of columns", group = "layout" }),
+        --awful.key({ modkey, "Control" }, "l", function()
+        --    awful.tag.incncol(-1, nil, true)
+        --end,
+        --        { description = "decrease the number of columns", group = "layout" }),
         awful.key({ modkey, }, "space", function()
             awful.layout.inc(1)
         end,
