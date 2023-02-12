@@ -664,6 +664,19 @@ awful.rules.rules = {
     }
     },
 
+    -- floating centered client(generic)
+    {
+        rule_any = {
+            class = {
+                "Pavucontrol",
+            },
+        }, properties = {
+        floating = true,
+        ontop = true,
+        placement = awful.placement.centered
+    }
+    },
+
     -- Floating clients.
     { rule_any = {
         instance = {
