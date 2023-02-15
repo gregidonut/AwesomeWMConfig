@@ -668,6 +668,7 @@ awful.rules.rules = {
     {
         rule_any = {
             class = {
+                "Clock",
                 "Pavucontrol",
             },
         }, properties = {
@@ -696,7 +697,6 @@ awful.rules.rules = {
             "veromix",
             "SVPManager",
             "mpv",
-            "Clock",
             "xtightvncviewer" },
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
