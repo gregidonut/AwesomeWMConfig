@@ -602,7 +602,6 @@ awful.rules.rules = {
     {
         rule_any = {
             class = {
-                "WebApp-monkeytype8630",
                 "WebApp-messenger3845",
                 "discord"
             },
@@ -668,6 +667,7 @@ awful.rules.rules = {
     {
         rule_any = {
             class = {
+                "WebApp-monkeytype8630",
                 "Clock",
                 "Pavucontrol",
             },
