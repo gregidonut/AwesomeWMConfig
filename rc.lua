@@ -682,6 +682,7 @@ awful.rules.rules = {
         rule_any = {
             class = {
                 "WebApp-monkeytype8630",
+                "Monkeytype-desktop",
             },
         }, properties = {
         floating = true,
