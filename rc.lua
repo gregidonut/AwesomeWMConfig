@@ -663,17 +663,28 @@ awful.rules.rules = {
     }
     },
 
-    -- floating centered client(generic)
+    -- floating centered client(generic, on-top)
     {
         rule_any = {
             class = {
-                "WebApp-monkeytype8630",
                 "Clock",
                 "Pavucontrol",
             },
         }, properties = {
         floating = true,
         ontop = true,
+        placement = awful.placement.centered
+    }
+    },
+
+    -- floating centered client(generic, not-on-top)
+    {
+        rule_any = {
+            class = {
+                "WebApp-monkeytype8630",
+            },
+        }, properties = {
+        floating = true,
         placement = awful.placement.centered
     }
     },
